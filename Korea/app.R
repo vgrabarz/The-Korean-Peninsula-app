@@ -194,7 +194,7 @@ server <- function(input, output) {
   })
 
   rr3 = reactive({
-    my_compare3 = sf::read_sf(paste0("~/Korea/compare_polygon/", input$year1comp, "_", input$year2comp, ".gpkg"))
+    my_compare3 = sf::read_sf(paste0("~/Korea/compare_poly/", input$year1comp, "_", input$year2comp, ".gpkg"))
   })
 
   output$map3 <- renderPlot({
