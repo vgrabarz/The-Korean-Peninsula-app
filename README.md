@@ -5,10 +5,11 @@
 
 ## Features
 
-- Import of a raster file and its visualization 
-- Visualization of landscapes, cores and patches
-- Calculation of landscape metrics and their export to __csv__ and __xlsx__
-- Implementation of moving windows in landscapemetrics
+- Maps of the land cover 
+- Maps of comparison of land cover changes between two selected years in regular areas
+- Maps of comparison of land cover changes between two selected years in irregular administrative areas
+- Maps of clustering in regular areas
+- Maps of clustering in irregular administrative areas
 
 
 ## Installation
