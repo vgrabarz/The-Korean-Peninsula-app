@@ -7,14 +7,14 @@ library(leaflet)
 library(viridis)
 library(colorspace)
 
-all_rc = terra::rast("~/Korea/landocover/alllandcover.tif")
+all_rc = terra::rast("~/landocover/alllandcover.tif")
 my_breaks = c(0, 0.001, 0.01, 0.1, 1.01)
 
 tifclass <- c("Agricultural Land", "Grassland", "Forest Broadleaved",
               "Forest Needleleaved", "Forest Mixed", "Urban Areas", "Wetland" ,
               "Bare Land", "Water", "Shrubs")
 classvalue = c(1,2,3,4,5,6,7,8,9,10)
-granice = read_sf("~/Korea/boundaries/granice.shp")
+granice = read_sf("~/boundaries/granice.shp")
 
 safe_pal9= c("#88CCEE", "#CC6677", "#DDCC77",
              "#117733", "#888888","115588", "49FF33", "4D7C4B")
@@ -185,7 +185,7 @@ server <- function(input, output) {
   })
 
   rr2 = reactive({
-    my_compare = terra::rast(paste0("~/Korea/compare/", input$year1, "_", input$year2, ".tif"))
+    my_compare = terra::rast(paste0("~/compare/", input$year1, "_", input$year2, ".tif"))
   })
 
   output$map2 <- renderPlot({
@@ -194,7 +194,7 @@ server <- function(input, output) {
   })
 
   rr3 = reactive({
-    my_compare3 = sf::read_sf(paste0("~/Korea/compare_poly/", input$year1comp, "_", input$year2comp, ".gpkg"))
+    my_compare3 = sf::read_sf(paste0("~/compare_poly/", input$year1comp, "_", input$year2comp, ".gpkg"))
   })
 
   output$map3 <- renderPlot({
@@ -204,7 +204,7 @@ server <- function(input, output) {
       theme(legend.position = "right")
   })
   rr4 = reactive({
-    my_compare4 = sf::read_sf(paste0("~/Korea/cluster/", input$year1cluster, "_", input$k_cluster, ".gpkg"))
+    my_compare4 = sf::read_sf(paste0("~/cluster/", input$year1cluster, "_", input$k_cluster, ".gpkg"))
   })
 
   output$map4 <- renderPlot({
@@ -213,7 +213,7 @@ server <- function(input, output) {
       })
 
   rr5 = reactive({
-    my_compare5 = sf::read_sf(paste0("~/Korea/cluster_poly/", input$year1_clusterarea, "_", input$k_clusterarea, ".gpkg"))
+    my_compare5 = sf::read_sf(paste0("~/cluster_poly/", input$year1_clusterarea, "_", input$k_clusterarea, ".gpkg"))
   })
 
   output$map5 <- renderPlot({
