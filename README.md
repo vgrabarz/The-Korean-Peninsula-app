@@ -15,6 +15,7 @@
 ## Installation
 
 ```r
+remotes::install_github('rstudio/leaflet')
 install.packages(c("shiny", "sf", "shinythemes", "ggplot2", "leaflet", 
                    "viridis", "colorspace", "terra"))
 ```
